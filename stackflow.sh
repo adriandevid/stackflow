@@ -70,7 +70,7 @@ start() {
 
     #start cloud deploy project
     echo "starting project cloud deploy..."
-    echo -e "JWT_SECRET=$PASSWORD \nMEMORY_NAME=sda1 \nNEXT_PUBLIC_ENVIRONMENT=$AMBIENT \nNEXT_PUBLIC_CLUSTER_NAME=$CLUSTER_NAME \nCLUSTER_NAME=$CLUSTER_NAME \nCLUSTER_SERVER=http://$HOST_KUBE_API:$HOST_KUBE_API_PORT \nTOKEN_SERVICE_ACCOUNT_CLUSTER=$(kubectl create token admin)" > .env
+    echo -e "JWT_SECRET=$PASSWORD \nMEMORY_NAME=sda1 \nSTACKFLOW_USER_NAME=$USER_NAME \nSTACKFLOW_PASSWORD=$PASSWORD \nNEXT_PUBLIC_ENVIRONMENT=$AMBIENT \nNEXT_PUBLIC_CLUSTER_NAME=$CLUSTER_NAME \nCLUSTER_NAME=$CLUSTER_NAME \nCLUSTER_SERVER=http://$HOST_KUBE_API:$HOST_KUBE_API_PORT \nTOKEN_SERVICE_ACCOUNT_CLUSTER=$(kubectl create token admin)" > .env
     npm run build > /dev/null 2>&1
     pm2 delete "pedreiro web" > /dev/null 2>&1
     pm2 start ecosystem.config.js --env production > /dev/null 2>&1
