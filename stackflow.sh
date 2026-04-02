@@ -6,6 +6,8 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
+STACKFLOW_CURRENT_VERSION="0.0.3"
+
 RED='\e[31m'
 GREEN='\e[32m'
 YELLOW='\e[33m'
