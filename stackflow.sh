@@ -76,8 +76,8 @@ start() {
     pm2 start ecosystem.config.js --env production > /dev/null 2>&1
 
     #apply migrations
-    node --no-warnings migrations/migration_user.ts > /dev/null 2>&1 
-    node --no-warnings migrations/migration_log.ts > /dev/null 2>&1
+    node --no-warnings --env-file=.env migrations/migration_user.ts  > /dev/null 2>&1
+    node --no-warnings --env-file=.env migrations/migration_log.ts > /dev/null 2>&1
 
     echo "stackflow started in http://localhost:3000."
     echo ""
