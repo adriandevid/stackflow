@@ -5,7 +5,7 @@ if [ "$(id -u)" -ne 0 ]; then
     exit 1
 fi
 
-STACKFLOW_CURRENT_VERSION="0.0.1"
+STACKFLOW_CURRENT_VERSION="0.0.2"
 
 EXIST_STACKFLOW_CURRENT_VERSION=$(cat ~/.bashrc | grep -q "export STACKFLOW_CURRENT_VERSION=\"$STACKFLOW_CURRENT_VERSION\"" > /dev/null ; echo $?)
 
