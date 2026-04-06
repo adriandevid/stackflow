@@ -24,7 +24,7 @@ command_exists() {
 
 PACKAGES_INSTALLED=true
 
-echo "
+echo -e "
 => ${CYAN}Stackflow${NC} essential resources
 "
 
